@@ -19,23 +19,48 @@ body, h1,h2,h3,h4,h5,h6{font-family: "Montserrat", sans-serif}
   <!-- Icon Bar (Sidenav - hidden on small screens) -->
 <nav class="w3-sidenav w3-center w3-small w3-hide-small">
   <!-- Avatar image in top left corner -->
-  <a class="w3-padding-large w3-hover-black" href="#">
+  <a class="w3-padding-large w3-hover-black" href="#" onclick="openHome()">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
   </a>
-  <a class="w3-padding-large w3-hover-black" href="#about">
+  <a class="w3-padding-large w3-hover-black" href="#about" onclick="openAbout()">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>ABOUT</p>
   </a>
-  <a class="w3-padding-large w3-hover-black" href="#photos">
+  <a class="w3-padding-large w3-hover-black" href="#photos" onlick="openPhotos()">
     <i class="fa fa-eye w3-xxlarge"></i>
     <p>PHOTOS</p>
   </a>
-  <a class="w3-padding-large w3-hover-black" href="#contact">
+  <a class="w3-padding-large w3-hover-black" href="#contact" onlick="openContact()">
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>CONTACT</p>
   </a>
 </nav>
+
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="myHome">
+  <a href="javascript:void(0)" onclick="closeHome()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  Home content.
+</div>
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="myAbout">
+  <a href="javascript:void(0)" onclick="closeAbout()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  About content.
+</div>
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="myPhotos">
+  <a href="javascript:void(0)" onclick="closePhotos()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  Photos content.
+</div>
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="myContact">
+  <a href="javascript:void(0)" onclick="closeContact()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  Contact content.
+</div>
 <!-- Hidden Sidenav (reveals when clicked on menu icon)-->
 <nav class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidenav">
   <a href="javascript:void(0)" onclick="closeNav()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
@@ -60,6 +85,38 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.display = "none";
 }
+// Open and close Home
+function openHome() {
+  document.getElementById("myHome").style.width = "94%";
+  document.getElementById("myHome").style.display = "block";
+}
+function closeHome() {
+  document.getElementById("myHome").style.display = "none";
+}
+// Open and close About
+function openAbout() {
+  document.getElementById("myAbout").style.width = "94%";
+  document.getElementById("myAbout").style.display = "block";
+}
+function closeAbout() {
+  document.getElementById("myAbout").style.display = "none";
+}
+function openPhotos() {
+  document.getElementById("myPhotos").style.width = "94%";
+  document.getElementById("myPhotos").style.display = "block";
+}
+function closePhotos() {
+  document.getElementById("myPhotos").style.display = "none";
+}
+// Open and close Home
+function openContact() {
+  document.getElementById("myContact").style.width = "94%";
+  document.getElementById("myContact").style.display = "block";
+}
+function closeContact() {
+  document.getElementById("myContact").style.display = "none";
+}
 </script>
 </body>
 </html>
+
