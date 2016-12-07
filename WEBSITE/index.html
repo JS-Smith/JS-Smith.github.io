@@ -18,24 +18,155 @@ body, h1,h2,h3,h4,h5,h6{font-family: "Montserrat", sans-serif}
 <body>
   <!-- Icon Bar (Sidenav - hidden on small screens) -->
 <nav class="w3-sidenav w3-center w3-small w3-hide-small">
-  <!-- Avatar image in top left corner -->
-  <a class="w3-padding-large w3-hover-black" href="#">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
+  <a class="w3-padding-large w3-hover-black" href="#" onclick="openPaw()">
+    <i class="fa fa-paw w3-xxlarge"></i>
+    <p>Tracking, Catching, Hatching</p>
   </a>
-  <a class="w3-padding-large w3-hover-black" href="#about">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
+  <a class="w3-padding-large w3-hover-black" href="#about" onclick="openLocationArrow()">
+    <i class="fa fa-location-arrow w3-xxlarge"></i>
+    <p>PokeStops, Know It All</p>
   </a>
-  <a class="w3-padding-large w3-hover-black" href="#photos">
+  <a class="w3-padding-large w3-hover-black" href="#photos" onclick="openPhotos()">
     <i class="fa fa-eye w3-xxlarge"></i>
     <p>PHOTOS</p>
   </a>
-  <a class="w3-padding-large w3-hover-black" href="#contact">
+  <a class="w3-padding-large w3-hover-black" href="#contact" onclick="openContact()">
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>CONTACT</p>
   </a>
 </nav>
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:3" id="myPaw">
+  <a href="javascript:void(0)" onclick="closePaw()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <!-- Slideshow -->
+<div class="w3-container">
+  <div class="w3-display-container mySlides">
+    <img src="https://tctechcrunch2011.files.wordpress.com/2016/08/header.png?w=630&h=495" style="width:100%">
+    <div class="w3-display-topleft w3-container w3-padding-32">
+      <span class="w3-white w3-padding-large w3-animate-bottom">Look Around Your Nearest PokeStop</span>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="https://i.ytimg.com/vi/dGUSfSI12yQ/maxresdefault.jpg" style="width:100%">
+    <div class="w3-display-topright w3-container w3-padding-32">
+      <span class="w3-white w3-padding-large w3-animate-bottom">Master Your Throws</span>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="http://pokesg.com/wp-content/uploads/2016/07/pokemon-go-eggs.jpg" style="width:100%">
+    <div class="w3-display-topright w3-container w3-padding-32">
+      <span class="w3-white w3-padding-large w3-animate-bottom">Hatch Pokemon On Your Journey</span>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="https://otakukart.com/animeblog/wp-content/uploads/2016/08/maxresdefault-9.jpg" style="width:100%">
+    <div class="w3-display-topleft w3-container w3-padding-32">
+      <span class="w3-white w3-padding-large w3-animate-bottom">The Basics For New Trainers</span>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="https://pbs.twimg.com/media/COjGOCSWwAA2Tzr.jpg" style="width:100%">
+    <div class="w3-display-topleft w3-container w3-padding-32">
+      <span class="w3-white w3-padding-large w3-animate-bottom">First Steps To Becoming Pro Trainers</span>
+    </div>
+  </div>
+  <!-- Slideshow next/previous buttons -->
+  <div class="w3-container w3-dark-grey w3-padding-8 w3-xlarge">
+    <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+    <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+
+    <div class="w3-center">
+      <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+      <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+      <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    </div>
+  </div>
+</div>
+  <!-- Menu Container -->
+  <div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+    <div class="w3-content">
+      <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE TECHNIQUE</h1>
+      <div class="w3-row w3-center w3-border w3-border-dark-grey">
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+          <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Tracking</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+          <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Catching</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+          <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Hatching</div>
+        </a>
+      </div>
+      <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+        <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
+        <p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+        <hr>
+        <h1><b>Formaggio</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$15.50</span></h1>
+        <p class="w3-text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+        <hr>
+        <h1><b>Chicken</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$17.00</span></h1>
+        <p class="w3-text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
+        <hr>
+        <h1><b>Pineapple'o'clock</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$16.50</span></h1>
+        <p class="w3-text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+        <hr>
+        <h1><b>Meat Town</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$20.00</span></h1>
+        <p class="w3-text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+        <hr>
+        <h1><b>Parma</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">$21.50</span></h1>
+        <p class="w3-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+      </div>
+      <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+        <h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$13.50</span></h1>
+        <p class="w3-text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
+        <hr>
+        <h1><b>Ravioli</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$14.50</span></h1>
+        <p class="w3-text-grey">Ravioli filled with cheese</p>
+        <hr>
+        <h1><b>Spaghetti Classica</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$11.00</span></h1>
+        <p class="w3-text-grey">Fresh tomatoes, onions, ground beef</p>
+        <hr>
+        <h1><b>Seafood pasta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$25.50</span></h1>
+        <p class="w3-text-grey">Salmon, shrimp, lobster, garlic</p>
+      </div>
+      <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+        <h1><b>Today's Soup</b> <span class="w3-tag w3-grey w3-round">Seasonal</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5.50</span></h1>
+        <p class="w3-text-grey">Ask the waiter</p>
+        <hr>
+        <h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$8.50</span></h1>
+        <p class="w3-text-grey">Bread with pesto, tomatoes, onion, garlic</p>
+        <hr>
+        <h1><b>Garlic bread</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$9.50</span></h1>
+        <p class="w3-text-grey">Grilled ciabatta, garlic butter, onions</p>
+        <hr>
+        <h1><b>Tomozzarella</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10.50</span></h1>
+        <p class="w3-text-grey">Tomatoes and mozzarella</p>
+      </div><br>
+    </div>
+  </div>
+</div>
+
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:3" id="myLocationArrow">
+  <a href="javascript:void(0)" onclick="closeLocationArrow()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  About content.
+</div>
+
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:3" id="myPhotos">
+  <a href="javascript:void(0)" onclick="closePhotos()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  Photos content.
+</div>
+
+<div class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:3" id="myContact">
+  <a href="javascript:void(0)" onclick="closeContact()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  Contact content.
+</div>
 <!-- Hidden Sidenav (reveals when clicked on menu icon)-->
 <nav class="w3-sidenav w3-black w3-animate-right w3-center w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidenav">
   <a href="javascript:void(0)" onclick="closeNav()" class="w3-closenav w3-xxxlarge w3-display-topright" style="padding:0 12px;">
@@ -49,7 +180,7 @@ body, h1,h2,h3,h4,h5,h6{font-family: "Montserrat", sans-serif}
 <div class="w3-main w3-padding-large" style="margin-left:40%">
 
   <!-- Menu icon to open sidenav -->
-  <span class="w3-opennav w3-top w3-padding-top w3-xxlarge w3-margin-right w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+  <span class="w3-opennav w3-top w3-padding-top w3-xxlarge w3-margin-right w3-text-grey w3-hover-text-black" style="width:auto;right:0;"onclick="openNav()"><i class="fa fa-book"></i></span>
 </div>
 <script>
 // Open and close sidenav
@@ -57,10 +188,82 @@ function openNav() {
   document.getElementById("mySidenav").style.width = "94%";
   document.getElementById("mySidenav").style.display = "block";
 }
-
 function closeNav() {
   document.getElementById("mySidenav").style.display = "none";
 }
+// Open and close Paw
+function openPaw() {
+  document.getElementById("myPaw").style.width = "94%";
+  document.getElementById("myPaw").style.display = "block";
+}
+function closePaw() {
+  document.getElementById("myPaw").style.display = "none";
+}
+// Open and close LocationArrow
+function openLocationArrow() {
+  document.getElementById("myLocationArrow").style.width = "94%";
+  document.getElementById("myLocationArrow").style.display = "block";
+}
+function closeLocationArrow() {
+  document.getElementById("myLocationArrow").style.display = "none";
+}
+// Open and close Photos
+function openPhotos() {
+  document.getElementById("myPhotos").style.width = "94%";
+  document.getElementById("myPhotos").style.display = "block";
+}
+function closePhotos() {
+  document.getElementById("myPhotos").style.display = "none";
+}
+function openContact() {
+  document.getElementById("myContact").style.width = "94%";
+  document.getElementById("myContact").style.display = "block";
+}
+function closeContact() {
+  document.getElementById("myContact").style.display = "none";
+}
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-white";
+}
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
 </script>
 </body>
 </html>
